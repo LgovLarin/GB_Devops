@@ -1,0 +1,5 @@
+3.Создать несколько файлов. Создать директорию, переместить файл туда. Удалить все созданные в этом и предыдущем задании директории и файлы.
+touch file4 file5 file6
+mkdir task3
+mv file4 file5 file6 task3/
+rm -r task3 file1 file2 file3_rename

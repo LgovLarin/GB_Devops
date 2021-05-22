@@ -1,0 +1,14 @@
+9.Заполнить директории файлами вида ГГГГММДДНН.txt. Внутри файла должно быть его имя. Например: 2018011301.txt, 2018011302.txt.
+for i in {2017..2021}
+do
+for j in {01..12}
+do
+for h in {01..31}
+do
+for r in {01..10}
+do
+echo $i$j$h$r".txt" > ~/lesson2/t10/foto/$i/$j/$i$j$h$r.txt
+done
+done
+done
+done
