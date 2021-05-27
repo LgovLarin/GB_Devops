@@ -1,0 +1,9 @@
+Создать два произвольных файла. Первому присвоить права на чтение, запись для владельца и группы, только на чтение — для всех. Второму присвоить права на чтение, запись — только для владельца. Сделать это в численном и символьном виде.
+
+ivan@ivan-host:~/lesson3$ touch file1
+ivan@ivan-host:~/lesson3$ touch file2
+ivan@ivan-host:~/lesson3$ chmod u=rw,g=rw,o=r file1
+ivan@ivan-host:~/lesson3$ chmod 664 file1
+ivan@ivan-host:~/lesson3$ chmod u=rw,g=-,o=- file2
+ivan@ivan-host:~/lesson3$ chmod 600 file2
+

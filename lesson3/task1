@@ -1,0 +1,29 @@
+Создать файл file1 и наполнить его произвольным содержимым. Скопировать его в file2. Создать символическую ссылку file3 на file1. Создать жесткую ссылку file4 на file1. Посмотреть, какие айноды у файлов. Удалить file1. Что стало с остальными созданными файлами? Попробовать вывести их на экран.
+
+echo slc,lscslcsl >file1
+cp file1 file2
+ln -s file1 file3
+ln file1 file4
+ivan@ivan-host:~/lesson3$ ls -ila
+итого 20
+7471297 drwxrwxr-x  2 ivan ivan 4096 мая 26 23:33 .
+7340033 drwxr-xr-x 25 ivan ivan 4096 мая 26 23:09 ..
+7471298 -rw-rw-r--  2 ivan ivan   13 мая 26 23:09 file1
+7471447 -rw-rw-r--  1 ivan ivan   13 мая 26 23:28 file2
+7471523 lrwxrwxrwx  1 ivan ivan    5 мая 26 23:33 file3 -> file1
+7471298 -rw-rw-r--  2 ivan ivan   13 мая 26 23:09 file4
+rm file1
+ivan@ivan-host:~/lesson3$ ls -ila
+итого 16
+7471297 drwxrwxr-x  2 ivan ivan 4096 мая 26 23:36 .
+7340033 drwxr-xr-x 25 ivan ivan 4096 мая 26 23:09 ..
+7471447 -rw-rw-r--  1 ivan ivan   13 мая 26 23:28 file2
+7471523 lrwxrwxrwx  1 ivan ivan    5 мая 26 23:33 file3 -> file1 // в терминале file3 -> file1 отмечено красным
+7471298 -rw-rw-r--  1 ivan ivan   13 мая 26 23:09 file4
+ivan@ivan-host:~/lesson3$ cat file2
+slc,lscslcsl
+ivan@ivan-host:~/lesson3$ cat file3
+cat: file3: Нет такого файла или каталога
+ivan@ivan-host:~/lesson3$ cat file4
+slc,lscslcsl
+ivan@ivan-host:~/lesson3$

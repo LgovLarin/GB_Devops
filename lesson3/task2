@@ -1,0 +1,9 @@
+Дать созданным файлам другие, произвольные имена. Создать новую символическую ссылку. Переместить ссылки в другую директорию.
+
+ivan@ivan-host:~/lesson3$ mv file2 file2.rename
+ivan@ivan-host:~/lesson3$ mv file3 file3.rename
+ivan@ivan-host:~/lesson3$ mv file4 file4.rename
+ivan@ivan-host:~/lesson3$ mv file2.link file3.rename ~/Документы/
+mv: не удалось выполнить stat для 'file3.rename': Нет такого файла или каталога
+ivan@ivan-host:~/lesson3$ ls ~/Документы/
+AnyDesk  file2.link  file3.rename
