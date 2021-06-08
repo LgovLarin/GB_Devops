@@ -1,0 +1,38 @@
+Настраивал wi-fi  через netplan
+Отредактировал файл vim 01-network-manager-all.yaml
+
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+  wifis:
+    wlp2s0b1:
+      dhcp4: false
+      addresses: [ 192.168.0.23/24 ]
+      gateway4: 192.168.0.1
+      dhcp6: false
+      nameservers:
+           addresses: [ 8.8.8.8, 8.8.4.4 ]
+      access-points:
+         "Larin":
+           password: "2806INVlrn"
+           
+sudo netplan --debug generate
+sudo netplan --debug apply
+Вернул обратно нa dhcp
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+  wifis:
+    wlp2s0b1:
+      dhcp4: true
+      dhcp6: false
+      nameservers:
+           addresses: [ 8.8.8.8, 8.8.4.4 ]
+      access-points:
+         "Larin":
+           password: "2806INVlrn"
+
+sudo netplan --debug generate
+sudo netplan --debug apply

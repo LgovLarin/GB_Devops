@@ -1,0 +1,2 @@
+sudo ip addr add 192.168.0.23/24 broadcast 192.168.0.255 dev eno1
+sudo ip link set eno1 up
